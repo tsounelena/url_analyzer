@@ -7,7 +7,6 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class MyJavaMailServiceImpl implements MyJavaMailService{
     }
 
     @Override
-    public String createTextOfEmail(List<URI> deletedUris, List<URI> addedUris, List<URI> changedUris) {
+    public String createTextOfEmail(List<String> deletedUris, List<String> addedUris, List<String> changedUris) {
 
         StringBuilder builder = new StringBuilder();
         builder.append("Здравствуйте, дорогая и.о. секретаря!\n\n")
