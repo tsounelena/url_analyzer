@@ -24,15 +24,13 @@ public class MyURLComparator {
             if (today.containsKey(values.getKey())) {
                 if (!today.get(values.getKey()).equals(values.getValue())) {
                     changedUrls.add(values.getKey());
+                    today.remove(values.getKey());
                 }
             } else {
                 deletedUrls.add(values.getKey());
+                today.remove(values.getKey());
             }
         }
-        for (Map.Entry<String, String> values : today.entrySet()) {
-            if (!yesterday.containsKey(values.getKey())) {
-                addedUrls.add(values.getKey());
-            }
-        }
+        addedUrls.addAll(today.keySet());
     }
 }
